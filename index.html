@@ -1,0 +1,261 @@
+export default function WorkshopPage() {
+  const dates = [
+    { label: "Paper Submission Deadline", value: "May 10, 2026" },
+    { label: "Notification to Authors", value: "May 28, 2026" },
+    { label: "Camera-Ready Deadline", value: "June 5, 2026" },
+    { label: "Workshop Date", value: "July 12, 2026" },
+  ];
+
+  const topics = [
+    "Generative models for vision tasks",
+    "Low-light and adverse-condition visual understanding",
+    "Vision-language learning for scene understanding",
+    "Synthetic data for recognition and robustness",
+    "Diffusion models for analysis and generation",
+    "Efficient multimodal representation learning",
+    "3D/4D vision and neural rendering",
+    "Evaluation, bias, and trustworthy generative vision",
+  ];
+
+  const speakers = [
+    {
+      name: "Speaker Name 1",
+      affiliation: "University / Company",
+      title: "Keynote Topic Placeholder",
+    },
+    {
+      name: "Speaker Name 2",
+      affiliation: "University / Company",
+      title: "Invited Talk Placeholder",
+    },
+    {
+      name: "Speaker Name 3",
+      affiliation: "University / Company",
+      title: "Invited Talk Placeholder",
+    },
+    {
+      name: "Speaker Name 4",
+      affiliation: "University / Company",
+      title: "Invited Talk Placeholder",
+    },
+  ];
+
+  const schedule = [
+    { time: "08:45", event: "Opening Remarks" },
+    { time: "09:00", event: "Keynote Talk 1" },
+    { time: "09:45", event: "Keynote Talk 2" },
+    { time: "10:30", event: "Coffee Break" },
+    { time: "11:00", event: "Invited Talk 3" },
+    { time: "11:45", event: "Invited Talk 4" },
+    { time: "12:30", event: "Lunch Break" },
+    { time: "14:00", event: "Poster Session" },
+    { time: "15:30", event: "Panel Discussion" },
+    { time: "16:30", event: "Awards & Closing" },
+  ];
+
+  const organizers = [
+    { name: "Organizer A", affiliation: "University A" },
+    { name: "Organizer B", affiliation: "University B" },
+    { name: "Organizer C", affiliation: "Institute C" },
+    { name: "Organizer D", affiliation: "Company D" },
+  ];
+
+  return (
+    <div className="min-h-screen bg-slate-50 text-slate-900">
+      <header className="relative overflow-hidden border-b bg-white">
+        <div className="absolute inset-0 bg-gradient-to-br from-indigo-50 via-white to-cyan-50" />
+        <div className="relative mx-auto max-w-6xl px-6 py-20 lg:px-8">
+          <nav className="mb-10 flex flex-wrap items-center justify-between gap-4">
+            <div className="text-sm font-semibold tracking-wide text-indigo-700">
+              Workshop 2026
+            </div>
+            <div className="flex flex-wrap gap-5 text-sm text-slate-600">
+              <a href="#overview" className="hover:text-indigo-700">Overview</a>
+              <a href="#topics" className="hover:text-indigo-700">Topics</a>
+              <a href="#speakers" className="hover:text-indigo-700">Speakers</a>
+              <a href="#schedule" className="hover:text-indigo-700">Schedule</a>
+              <a href="#submission" className="hover:text-indigo-700">Submission</a>
+              <a href="#organizers" className="hover:text-indigo-700">Organizers</a>
+            </div>
+          </nav>
+
+          <div className="grid gap-10 lg:grid-cols-[1.3fr_0.7fr] lg:items-center">
+            <div>
+              <p className="mb-3 inline-flex rounded-full border border-indigo-200 bg-indigo-50 px-3 py-1 text-sm font-medium text-indigo-700">
+                Co-located with CVPR / ICCV / ECCV style workshop
+              </p>
+              <h1 className="max-w-4xl text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl">
+                The 1st Workshop on <span className="text-indigo-700">Your Workshop Title</span>
+              </h1>
+              <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-600">
+                A clean academic workshop website template for presenting your workshop theme,
+                important dates, submission guidelines, invited speakers, schedule, and organizer information.
+              </p>
+              <div className="mt-8 flex flex-wrap gap-4">
+                <a
+                  href="#submission"
+                  className="rounded-2xl bg-indigo-600 px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:scale-[1.01]"
+                >
+                  Submit Paper
+                </a>
+                <a
+                  href="#overview"
+                  className="rounded-2xl border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-700 transition hover:border-indigo-300 hover:text-indigo-700"
+                >
+                  Learn More
+                </a>
+              </div>
+              <div className="mt-8 text-sm text-slate-500">
+                <span className="font-semibold text-slate-700">Date:</span> July 12, 2026 &nbsp; | &nbsp;
+                <span className="font-semibold text-slate-700">Venue:</span> Placeholder Conference Venue
+              </div>
+            </div>
+
+            <div className="rounded-[28px] border border-slate-200 bg-white p-6 shadow-sm">
+              <h2 className="text-lg font-semibold text-slate-900">Important Dates</h2>
+              <div className="mt-5 space-y-4">
+                {dates.map((item) => (
+                  <div key={item.label} className="rounded-2xl bg-slate-50 p-4">
+                    <div className="text-sm font-medium text-slate-500">{item.label}</div>
+                    <div className="mt-1 text-base font-semibold text-slate-900">{item.value}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main className="mx-auto max-w-6xl space-y-20 px-6 py-16 lg:px-8">
+        <section id="overview" className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr]">
+          <div>
+            <h2 className="text-3xl font-bold tracking-tight">Overview</h2>
+            <p className="mt-5 text-base leading-8 text-slate-600">
+              This workshop aims to bring together researchers working at the intersection of generative models,
+              visual recognition, and robust scene understanding. It provides a forum for discussing emerging ideas,
+              practical systems, and new benchmarks across generation and analysis.
+            </p>
+            <p className="mt-4 text-base leading-8 text-slate-600">
+              You can replace this paragraph with your own motivation, challenge statement, and workshop vision.
+              The layout is intentionally simple, so it is easy to deploy through GitHub Pages.
+            </p>
+          </div>
+          <div className="rounded-[28px] border border-slate-200 bg-white p-6 shadow-sm">
+            <h3 className="text-lg font-semibold">Why this workshop?</h3>
+            <ul className="mt-4 space-y-3 text-sm leading-7 text-slate-600">
+              <li>• Highlight new research directions.</li>
+              <li>• Connect academia and industry speakers.</li>
+              <li>• Encourage discussion around open challenges.</li>
+              <li>• Showcase posters, spotlights, and invited talks.</li>
+            </ul>
+          </div>
+        </section>
+
+        <section id="topics">
+          <h2 className="text-3xl font-bold tracking-tight">Covered Topics</h2>
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {topics.map((topic) => (
+              <div
+                key={topic}
+                className="rounded-[24px] border border-slate-200 bg-white p-5 text-sm leading-7 text-slate-700 shadow-sm"
+              >
+                {topic}
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section id="speakers">
+          <div className="flex items-end justify-between gap-4">
+            <div>
+              <h2 className="text-3xl font-bold tracking-tight">Invited Speakers</h2>
+              <p className="mt-3 text-slate-600">Replace the placeholders with your confirmed speaker list.</p>
+            </div>
+          </div>
+          <div className="mt-8 grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
+            {speakers.map((speaker) => (
+              <div key={speaker.name} className="rounded-[28px] border border-slate-200 bg-white p-6 shadow-sm">
+                <div className="mb-4 h-40 rounded-2xl bg-gradient-to-br from-slate-100 to-slate-200" />
+                <h3 className="text-lg font-semibold text-slate-900">{speaker.name}</h3>
+                <p className="mt-1 text-sm text-indigo-700">{speaker.affiliation}</p>
+                <p className="mt-4 text-sm leading-7 text-slate-600">{speaker.title}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section id="schedule" className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
+          <div>
+            <h2 className="text-3xl font-bold tracking-tight">Schedule</h2>
+            <p className="mt-4 text-base leading-8 text-slate-600">
+              Below is a sample one-day schedule. Swap in your final program once speakers and poster sessions are confirmed.
+            </p>
+          </div>
+          <div className="rounded-[28px] border border-slate-200 bg-white p-6 shadow-sm">
+            <div className="space-y-3">
+              {schedule.map((item) => (
+                <div
+                  key={`${item.time}-${item.event}`}
+                  className="grid grid-cols-[90px_1fr] gap-4 rounded-2xl border border-slate-100 px-4 py-3"
+                >
+                  <div className="font-semibold text-indigo-700">{item.time}</div>
+                  <div className="text-slate-700">{item.event}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="submission" className="grid gap-8 lg:grid-cols-2">
+          <div className="rounded-[28px] border border-slate-200 bg-white p-7 shadow-sm">
+            <h2 className="text-3xl font-bold tracking-tight">Call for Papers</h2>
+            <p className="mt-5 text-base leading-8 text-slate-600">
+              We welcome submissions related to the workshop theme. You can describe accepted formats here,
+              such as short papers, extended abstracts, posters, or challenge papers.
+            </p>
+            <p className="mt-4 text-base leading-8 text-slate-600">
+              Add your official submission instructions, formatting policy, archival status, and review process.
+            </p>
+          </div>
+          <div className="rounded-[28px] border border-slate-200 bg-white p-7 shadow-sm">
+            <h3 className="text-xl font-semibold text-slate-900">Submission Information</h3>
+            <div className="mt-5 space-y-4 text-sm leading-7 text-slate-600">
+              <p><span className="font-semibold text-slate-800">Submission Site:</span> OpenReview / CMT / Placeholder Link</p>
+              <p><span className="font-semibold text-slate-800">Paper Length:</span> 4 pages + references (example)</p>
+              <p><span className="font-semibold text-slate-800">Review Policy:</span> Double-blind / Single-blind / Non-archival</p>
+              <p><span className="font-semibold text-slate-800">Presentation Mode:</span> Poster / Spotlight / Oral</p>
+            </div>
+            <div className="mt-6 flex flex-wrap gap-4">
+              <button className="rounded-2xl bg-slate-900 px-5 py-3 text-sm font-semibold text-white">
+                OpenReview Link
+              </button>
+              <button className="rounded-2xl border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-700">
+                Author Instructions
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <section id="organizers">
+          <h2 className="text-3xl font-bold tracking-tight">Organizers</h2>
+          <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {organizers.map((person) => (
+              <div key={person.name} className="rounded-[28px] border border-slate-200 bg-white p-6 shadow-sm">
+                <div className="mb-4 h-24 w-24 rounded-full bg-gradient-to-br from-indigo-100 to-cyan-100" />
+                <h3 className="text-lg font-semibold text-slate-900">{person.name}</h3>
+                <p className="mt-2 text-sm text-slate-600">{person.affiliation}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+      </main>
+
+      <footer className="border-t bg-white">
+        <div className="mx-auto flex max-w-6xl flex-col gap-3 px-6 py-8 text-sm text-slate-500 lg:flex-row lg:items-center lg:justify-between lg:px-8">
+          <p>© 2026 Your Workshop Name. All rights reserved.</p>
+          <p>Built for academic workshop websites · GitHub Pages friendly</p>
+        </div>
+      </footer>
+    </div>
+  );
+}

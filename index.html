@@ -4,7 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Workshop 2026</title>
-  <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=PRgXW0JBd-wIZEQvtYUZ4ebBcTTQmpe52wsKYPmyAeO0iZQfpOt6GN0TQkmWEstSTzUE4u626CoPen9R6sYz7oKwbrKGB8y4uh5nGFC7nHhVCEyamNGCrjYEN28-D-Xhf3Dn56rIUlXiKcDn0UFCCBtpsg4CelDRFzUcEtVfzJ9zH_siqU6YdtsfHVxlAB4H09aEdj5LIJRrND0Dc9VbY3VuOPul-7GptAUQft9IiMUvAPYShWdLa-lBviQ3-BmreElQ8BiiwXOVH0kinrx6og" charset="UTF-8"></script><style>
+
+  <style>
     * {
       margin: 0;
       padding: 0;
@@ -16,10 +17,15 @@
     }
 
     body {
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
       background: #ffffff;
       color: #111827;
-      line-height: 1.72;
+      text-align: justify;
+      text-justify: inter-word;
     }
 
     a {
@@ -32,14 +38,19 @@
       display: block;
     }
 
+    /* ===== 全站统一版心 ===== */
     .container {
-      width: min(90%, 1040px);
+      width: min(1280px, calc(100% - 64px));
       margin: 0 auto;
     }
 
+    /* ===== 导航栏 ===== */
     nav {
-      border-bottom: 1px solid #e5e7eb;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
       background: #ffffff;
+      border-bottom: 1px solid #e5e7eb;
     }
 
     .nav-inner {
@@ -48,14 +59,15 @@
       align-items: center;
       flex-wrap: wrap;
       gap: 16px;
-      padding: 16px 0;
+      padding: 15px 0;
     }
 
     .logo {
       font-size: 16px;
       font-weight: 700;
       color: #111827;
-      letter-spacing: 0.2px;
+      letter-spacing: 0;
+      text-align: left;
     }
 
     .nav-links {
@@ -63,208 +75,318 @@
       flex-wrap: wrap;
       gap: 18px;
       font-size: 14px;
-      color: #4b5563;
+      font-weight: 600;
+      color: #374151;
+      text-align: left;
+    }
+
+    .nav-links a {
+      transition: color 0.2s ease;
     }
 
     .nav-links a:hover {
       color: #111827;
     }
 
+    /* ===== Header ===== */
     header {
-      background: #ffffff;
-      padding: 34px 0 18px;
+      position: relative;
+      padding: 108px 0 86px;
+      background-image: url("./WMU landscape shot.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
       border-bottom: 1px solid #e5e7eb;
     }
 
     .hero {
-      display: block;
+      width: 100%;
+      max-width: 100%;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #f3f4f6;
+      margin-bottom: 14px;
+      text-align: left;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.32);
     }
 
     h1 {
       font-size: 42px;
       line-height: 1.2;
       font-weight: 700;
-      margin-bottom: 14px;
-      max-width: 900px;
+      color: #ffffff;
+      margin-bottom: 12px;
+      text-align: left;
+      text-shadow: 0 3px 16px rgba(0, 0, 0, 0.35);
+      max-width: 980px;
     }
 
     .subtitle {
-      font-size: 24px;
-      line-height: 1.35;
-      color: #374151;
+      font-size: 20px;
+      line-height: 1.5;
+      color: #f3f4f6;
       margin-bottom: 18px;
       font-weight: 400;
+      text-align: left;
+      max-width: 980px;
+      text-shadow: 0 2px 12px rgba(0, 0, 0, 0.30);
     }
 
     .meta {
-      font-size: 15px;
-      color: #4b5563;
+      font-size: 14px;
+      line-height: 1.65;
+      color: #e5e7eb;
       margin-bottom: 18px;
+      text-align: left;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.30);
     }
 
     .meta div + div {
-      margin-top: 4px;
+      margin-top: 3px;
     }
 
     .hero p {
-      max-width: 900px;
-      font-size: 17px;
-      color: #374151;
+      font-size: 15px;
+      line-height: 1.75;
+      color: #f9fafb;
+      text-align: left;
+      max-width: 980px;
+      text-shadow: 0 2px 12px rgba(0, 0, 0, 0.28);
     }
 
+    /* ===== Main ===== */
     main {
-      padding: 44px 0 72px;
+      padding: 52px 0 78px;
     }
 
     section {
-      margin-bottom: 56px;
-      scroll-margin-top: 24px;
+      margin-bottom: 60px;
+      scroll-margin-top: 96px;
     }
 
     h2 {
-      font-size: 29px;
-      line-height: 1.25;
+      font-size: 28px;
+      line-height: 1.3;
       font-weight: 700;
-      margin-bottom: 16px;
+      margin-bottom: 14px;
+      text-align: left;
+      color: #111827;
     }
 
     h3 {
-      font-size: 20px;
+      font-size: 18px;
       line-height: 1.35;
       font-weight: 700;
-      margin: 24px 0 10px;
+      margin: 0 0 6px;
+      color: #111827;
+      text-align: left;
+    }
+
+    .section-intro,
+    .section-text,
+    .topics-list,
+    .submission-list,
+    .dates-list,
+    .schedule-list,
+    .contact-list,
+    .speakers-grid,
+    .organizers-grid,
+    .banner {
+      width: 100%;
+      max-width: 100%;
     }
 
     .section-text {
-      font-size: 16px;
+      font-size: 15px;
+      line-height: 1.7;
       color: #374151;
-      max-width: 960px;
       margin-bottom: 14px;
     }
 
+    /* ===== 普通横幅图 ===== */
     .banner {
-      margin: 24px 0 28px;
+      margin: 26px 0 28px;
       border: 1px solid #e5e7eb;
+      background: #ffffff;
     }
 
     .banner img {
       width: 100%;
-      height: 320px;
+      height: 380px;
       object-fit: cover;
     }
 
     .banner-caption {
       font-size: 13px;
       color: #6b7280;
-      padding: 10px 12px;
+      padding: 10px 14px;
       border-top: 1px solid #e5e7eb;
       background: #fafafa;
+      text-align: left;
     }
 
+    /* ===== Dates / Contact / Schedule ===== */
     .dates-list,
     .schedule-list,
     .contact-list {
-      margin-top: 10px;
+      margin-top: 12px;
       border-top: 1px solid #e5e7eb;
     }
 
     .date-item,
     .schedule-item,
     .contact-item {
-      padding: 12px 0;
+      padding: 13px 0;
       border-bottom: 1px solid #e5e7eb;
     }
 
     .date-item .label,
     .contact-label {
-      font-size: 14px;
+      font-size: 13px;
       color: #6b7280;
       margin-bottom: 2px;
+      text-align: left;
     }
 
     .date-item .value,
     .contact-value {
-      font-size: 16px;
+      font-size: 15px;
       color: #111827;
       font-weight: 600;
-    }
-
-    .topics-list,
-    .why-list,
-    .submission-list {
-      padding-left: 22px;
-      color: #374151;
-    }
-
-    .topics-list li,
-    .why-list li,
-    .submission-list li {
-      margin-bottom: 10px;
-    }
-
-    .speakers-grid,
-    .organizers-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 26px 28px;
-      margin-top: 20px;
-    }
-
-    .speaker-item,
-    .organizer-item {
-      padding-top: 8px;
-    }
-
-    .speaker-photo,
-    .avatar {
-      width: 100%;
-      height: 180px;
-      background: #f3f4f6;
-      border: 1px solid #e5e7eb;
-      margin-bottom: 12px;
-      object-fit: cover;
-    }
-
-    .speaker-item h3,
-    .organizer-item h3 {
-      margin: 0 0 6px;
-      font-size: 19px;
-    }
-
-    .affiliation,
-    .small-text {
-      color: #4b5563;
-      font-size: 15px;
+      text-align: left;
     }
 
     .schedule-item {
       display: grid;
-      grid-template-columns: 90px 1fr;
+      grid-template-columns: 118px 1fr;
       gap: 18px;
       align-items: start;
     }
 
     .schedule-time {
+      font-size: 15px;
       font-weight: 700;
       color: #111827;
+      text-align: left;
     }
 
-    .news-list {
-      padding-left: 20px;
+    /* ===== 列表 ===== */
+    .topics-list,
+    .submission-list {
+      padding-left: 22px;
       color: #374151;
-      margin-top: 8px;
+      font-size: 15px;
+      line-height: 1.7;
     }
 
-    .news-list li + li {
-      margin-top: 8px;
+    .topics-list li,
+    .submission-list li {
+      margin-bottom: 9px;
     }
 
+    /* ===== Speakers ===== */
+    .speakers-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 30px;
+      margin-top: 26px;
+      align-items: start;
+    }
+
+    /* ===== Organizers ===== */
+    .organizers-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 36px 28px;
+      margin-top: 24px;
+      align-items: start;
+    }
+
+    .speaker-item,
+    .organizer-item {
+      text-align: center;
+      padding: 16px 10px;
+      border-radius: 18px;
+      transition: transform 0.28s ease;
+      background: transparent;
+    }
+
+    .speaker-item:hover,
+    .organizer-item:hover {
+      transform: translateY(-6px);
+    }
+
+    .speaker-photo {
+      width: 190px;
+      height: 190px;
+      object-fit: cover;
+      object-position: center top;
+      border-radius: 50%;
+      margin: 0 auto 14px;
+      border: 2px solid #e5e7eb;
+      background: #f3f4f6;
+      transition: transform 0.28s ease, border-color 0.28s ease, box-shadow 0.28s ease;
+    }
+
+    .speaker-item:hover .speaker-photo,
+    .organizer-item:hover .speaker-photo {
+      transform: translateY(-2px);
+      border-color: #cbd5e1;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+    }
+
+    .speaker-item h3,
+    .organizer-item h3,
+    .speaker-item .affiliation,
+    .organizer-item .affiliation,
+    .speaker-item .small-text,
+    .organizer-item .small-text {
+      text-align: center;
+    }
+
+    .speaker-item h3,
+    .organizer-item h3 {
+      font-size: 18px;
+      margin-bottom: 4px;
+    }
+
+    .speaker-item h3 a,
+    .organizer-item h3 a {
+      color: #111827;
+      transition: color 0.2s ease;
+    }
+
+    .speaker-item h3 a:hover,
+    .organizer-item h3 a:hover {
+      text-decoration: underline;
+    }
+
+    .affiliation {
+      color: #4b5563;
+      font-size: 14px;
+      margin-bottom: 3px;
+    }
+
+    .small-text {
+      color: #6b7280;
+      font-size: 13px;
+      line-height: 1.55;
+    }
+
+    /* ===== Footer ===== */
     footer {
       border-top: 1px solid #e5e7eb;
       padding: 22px 0 34px;
       color: #6b7280;
-      font-size: 14px;
+      font-size: 13px;
       background: #ffffff;
+      text-align: left;
     }
 
     .footer-wrap {
@@ -274,24 +396,45 @@
       flex-wrap: wrap;
     }
 
-    @media (max-width: 900px) {
-      .speakers-grid,
+    /* ===== 响应式 ===== */
+    @media (max-width: 1180px) {
+      .speakers-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
       .organizers-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
+
+      .speaker-photo {
+        width: 178px;
+        height: 178px;
+      }
     }
 
-    @media (max-width: 700px) {
+    @media (max-width: 760px) {
+      body {
+        text-align: left;
+      }
+
+      .container {
+        width: min(1280px, calc(100% - 40px));
+      }
+
+      .nav-inner {
+        align-items: flex-start;
+      }
+
       h1 {
         font-size: 34px;
       }
 
       .subtitle {
-        font-size: 20px;
+        font-size: 18px;
       }
 
       h2 {
-        font-size: 25px;
+        font-size: 24px;
       }
 
       .speakers-grid,
@@ -305,7 +448,16 @@
       }
 
       .banner img {
-        height: 220px;
+        height: 240px;
+      }
+
+      .speaker-photo {
+        width: 156px;
+        height: 156px;
+      }
+
+      header {
+        padding: 76px 0 60px;
       }
     }
   </style>
@@ -321,6 +473,7 @@
         <a href="#schedule">Program</a>
         <a href="#submission">Call for Papers</a>
         <a href="#organizers">Organizers</a>
+        <a href="#contact">Contact</a>
       </div>
     </div>
   </nav>
@@ -328,18 +481,18 @@
   <header>
     <div class="container">
       <div class="hero">
-        <h1>The 1st Workshop on <span>Your Workshop Title</span></h1>
-        <div class="subtitle">A workshop on human-centered multimodal intelligence in real-world environments</div>
+        <div class="eyebrow">CVPR 2026 Workshop</div>
+        <h1>The 1st Workshop on Human-Centered Multimodal Intelligence in the Wild</h1>
+        <div class="subtitle">
+          A workshop on foundation models and beyond for human-centered multimodal perception, reasoning, and real-world deployment
+        </div>
         <div class="meta">
           <div><strong>Date:</strong> July 12, 2026</div>
           <div><strong>Location:</strong> Placeholder Conference Venue</div>
           <div><strong>Co-located with:</strong> Placeholder Conference</div>
         </div>
         <p>
-          This workshop brings together researchers working on robust visual understanding,
-          multimodal reasoning, and human-centered perception in unconstrained settings.
-          The goal is to create a focused academic venue for discussing practical challenges,
-          emerging methods, and future directions for intelligent systems deployed in the wild.
+          The Human-Centered Multimodal Intelligence in the Wild (HCMIW) workshop bridges the gap between theoretical multimodal foundation models and practical, human-aligned applications. We focus on the synergy between robust perception and sophisticated reasoning, aiming to redefine how vision systems interpret human presence across heterogeneous sensors and dynamic real-world contexts.
         </p>
       </div>
     </div>
@@ -347,34 +500,26 @@
 
   <main>
     <div class="container">
+
       <section id="overview">
         <h2>Overview</h2>
-        <p class="section-text">
-          The emergence of multimodal foundation models has catalyzed a major shift in human-centered vision.
-          While traditional systems often struggle with open-world human behavior, large-scale pretraining and
-          cross-modal reasoning now offer new ways to build adaptable and resilient visual intelligence.
-        </p>
-        <p class="section-text">
-          This workshop focuses on the transition from constrained benchmarks to in-the-wild deployment, where
-          perception systems must deal with ambiguous human intent, adverse imaging conditions, heterogeneous
-          sensors, and dynamic environments. We aim to bridge theory and practice by bringing together work on
-          robust perception, grounded reasoning, and real-world human-centered applications.
-        </p>
+        <div class="section-intro">
+          <p class="section-text">
+            The emergence of multimodal foundation models has catalyzed a paradigm shift in human-centered vision. While traditional systems often struggle with the open-world complexity of human behavior, the integration of large-scale pre-training with cross-modal reasoning offers new paths toward adaptive intelligence.
+          </p>
+          <p class="section-text">
+            This workshop focuses on the transition from constrained benchmarks to in-the-wild deployment, where perception systems must deal with ambiguous human intent, adverse imaging conditions, heterogeneous sensors, and dynamic environments. We aim to bridge theory and practice by bringing together work on robust perception, grounded reasoning, and real-world human-centered applications.
+          </p>
+        </div>
 
         <div class="banner">
           <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1600&q=80" alt="Workshop banner image" />
-          <div class="banner-caption">Replace this banner with a representative workshop image, conference photo, or project figure.</div>
+          <div class="banner-caption">
+            Replace this image with a representative workshop figure, conference visual, or project banner.
+          </div>
         </div>
 
-        <h3>Why this workshop?</h3>
-        <ul class="why-list">
-          <li>Encourage discussion on robust human-centered perception and reasoning in real-world scenarios.</li>
-          <li>Connect research on multimodal learning, adverse-condition vision, and sensor fusion.</li>
-          <li>Provide a venue for exchanging ideas across academia and industry.</li>
-          <li>Highlight open challenges in evaluation, deployment, safety, and generalization.</li>
-        </ul>
-
-        <h3>Important Dates</h3>
+        <h3 style="margin-top: 24px;">Important Dates</h3>
         <div class="dates-list">
           <div class="date-item">
             <div class="label">Paper Submission Deadline</div>
@@ -401,56 +546,46 @@
           We welcome submissions and discussions related to, but not limited to, the following themes:
         </p>
         <ul class="topics-list">
-          <li>MLLMs and foundation models for human-centric visual understanding</li>
-          <li>Low-light, nighttime, and adverse-condition perception</li>
-          <li>Activity analysis, intent understanding, and behavior reasoning</li>
-          <li>Fusion of RGB, infrared, thermal, event, depth, and LiDAR modalities</li>
-          <li>Domain generalization, transfer, and adaptation for human-centered tasks</li>
-          <li>Benchmarking, evaluation, reliability, and safety in real-world settings</li>
-          <li>Efficient learning under limited annotations or low-resource conditions</li>
-          <li>Applications in surveillance, healthcare, robotics, transportation, and assistive systems</li>
+          <li>Foundation models for human-centric perception, understanding, and reasoning.</li>
+          <li>Multimodal learning for human behavior understanding, interaction analysis, and activity recognition.</li>
+          <li>Perception in adverse conditions, including low light, occlusion, motion blur, and sensor noise.</li>
+          <li>Cross-modal grounding across RGB, thermal, infrared, depth, event cameras, LiDAR, and audio.</li>
+          <li>Generalization, adaptation, robustness, and reliability in real-world human-centered systems.</li>
+          <li>Benchmarks, datasets, evaluation protocols, and deployment-oriented analysis for in-the-wild scenarios.</li>
         </ul>
       </section>
 
       <section id="speakers">
         <h2>Invited Speakers</h2>
-        <p class="section-text">Replace the placeholders below with your confirmed speaker list.</p>
+        <p class="section-text">Confirmed invited speakers for the workshop.</p>
+
         <div class="speakers-grid">
           <div class="speaker-item">
-            <div class="speaker-photo"></div>
-            <h3>Speaker Name 1</h3>
+            <img class="speaker-photo" src="speaker/dima.jpg" alt="Speaker 1">
+            <h3><a href="#">Speaker Name 1</a></h3>
             <div class="affiliation">University / Company</div>
-            <div class="small-text">Talk title or short topic description</div>
+            <div class="small-text">Short talk title or research focus</div>
           </div>
+
           <div class="speaker-item">
-            <div class="speaker-photo"></div>
-            <h3>Speaker Name 2</h3>
+            <img class="speaker-photo" src="speaker/liuzicheng.jpg" alt="Speaker 2">
+            <h3><a href="#">Speaker Name 2</a></h3>
             <div class="affiliation">University / Company</div>
-            <div class="small-text">Talk title or short topic description</div>
+            <div class="small-text">Short talk title or research focus</div>
           </div>
+
           <div class="speaker-item">
-            <div class="speaker-photo"></div>
-            <h3>Speaker Name 3</h3>
+            <img class="speaker-photo" src="speaker/poppe.jpg" alt="Speaker 3">
+            <h3><a href="#">Speaker Name 3</a></h3>
             <div class="affiliation">University / Company</div>
-            <div class="small-text">Talk title or short topic description</div>
+            <div class="small-text">Short talk title or research focus</div>
           </div>
+
           <div class="speaker-item">
-            <div class="speaker-photo"></div>
-            <h3>Speaker Name 4</h3>
+            <img class="speaker-photo" src="speaker/CSKIM_20190429.jpg" alt="Speaker 4">
+            <h3><a href="#">Speaker Name 4</a></h3>
             <div class="affiliation">University / Company</div>
-            <div class="small-text">Talk title or short topic description</div>
-          </div>
-          <div class="speaker-item">
-            <div class="speaker-photo"></div>
-            <h3>Speaker Name 5</h3>
-            <div class="affiliation">University / Company</div>
-            <div class="small-text">Talk title or short topic description</div>
-          </div>
-          <div class="speaker-item">
-            <div class="speaker-photo"></div>
-            <h3>Speaker Name 6</h3>
-            <div class="affiliation">University / Company</div>
-            <div class="small-text">Talk title or short topic description</div>
+            <div class="small-text">Short talk title or research focus</div>
           </div>
         </div>
       </section>
@@ -458,32 +593,57 @@
       <section id="schedule">
         <h2>Program</h2>
         <p class="section-text">
-          Below is a sample one-day program. Replace it with the final workshop schedule after speakers and sessions are confirmed.
+          We propose a half-day onsite workshop with a balanced structure combining invited talks, contributed papers, and interactive discussion.
         </p>
+
         <div class="schedule-list">
-          <div class="schedule-item"><div class="schedule-time">08:45</div><div>Opening remarks</div></div>
-          <div class="schedule-item"><div class="schedule-time">09:00</div><div>Invited talk 1</div></div>
-          <div class="schedule-item"><div class="schedule-time">09:45</div><div>Invited talk 2</div></div>
-          <div class="schedule-item"><div class="schedule-time">10:30</div><div>Coffee break</div></div>
-          <div class="schedule-item"><div class="schedule-time">11:00</div><div>Invited talk 3</div></div>
-          <div class="schedule-item"><div class="schedule-time">11:45</div><div>Invited talk 4</div></div>
-          <div class="schedule-item"><div class="schedule-time">12:30</div><div>Lunch break</div></div>
-          <div class="schedule-item"><div class="schedule-time">14:00</div><div>Poster session</div></div>
-          <div class="schedule-item"><div class="schedule-time">15:30</div><div>Panel discussion</div></div>
-          <div class="schedule-item"><div class="schedule-time">16:30</div><div>Awards and closing</div></div>
+          <div class="schedule-item">
+            <div class="schedule-time">13:30–13:40</div>
+            <div>Opening Remarks</div>
+          </div>
+          <div class="schedule-item">
+            <div class="schedule-time">13:40–14:10</div>
+            <div>Keynote 1 — Invited Speaker #1</div>
+          </div>
+          <div class="schedule-item">
+            <div class="schedule-time">14:10–14:40</div>
+            <div>Keynote 2 — Invited Speaker #2</div>
+          </div>
+          <div class="schedule-item">
+            <div class="schedule-time">14:40–14:55</div>
+            <div>Contributed Talk</div>
+          </div>
+          <div class="schedule-item">
+            <div class="schedule-time">14:55–15:55</div>
+            <div>Coffee Break & Poster Session</div>
+          </div>
+          <div class="schedule-item">
+            <div class="schedule-time">15:55–16:25</div>
+            <div>Keynote 3 — Invited Speaker #3</div>
+          </div>
+          <div class="schedule-item">
+            <div class="schedule-time">16:25–16:55</div>
+            <div>Keynote 4 — Invited Speaker #4</div>
+          </div>
+          <div class="schedule-item">
+            <div class="schedule-time">16:55–17:25</div>
+            <div>Panel Discussion</div>
+          </div>
+          <div class="schedule-item">
+            <div class="schedule-time">17:25–17:35</div>
+            <div>Award Announcement & Closing Remarks</div>
+          </div>
         </div>
       </section>
 
       <section id="submission">
         <h2>Call for Papers</h2>
         <p class="section-text">
-          We welcome original and previously unpublished work related to the workshop theme.
-          Contributions may include methodological advances, benchmarks, datasets, applications,
-          analyses of failure cases, or position papers that motivate new research directions.
+          We welcome original and previously unpublished work related to the workshop theme. Contributions may include methodological advances, benchmarks, datasets, applications, analyses of failure cases, and position papers that motivate new research directions.
         </p>
         <ul class="submission-list">
           <li><strong>Submission site:</strong> OpenReview / CMT / placeholder link</li>
-          <li><strong>Paper format:</strong> 4 pages plus references (example)</li>
+          <li><strong>Paper format:</strong> 4 pages plus references</li>
           <li><strong>Review policy:</strong> double-blind or single-blind, depending on final policy</li>
           <li><strong>Presentation format:</strong> poster, spotlight, or oral</li>
           <li><strong>Archival status:</strong> specify whether the workshop proceedings are archival or non-archival</li>
@@ -492,36 +652,47 @@
 
       <section id="organizers">
         <h2>Organizers</h2>
+
         <div class="organizers-grid">
           <div class="organizer-item">
-            <div class="avatar"></div>
-            <h3>Organizer A</h3>
-            <div class="small-text">University A</div>
+            <img class="speaker-photo" src="img/tu.jpg" alt="Zhigang Tu">
+            <h3><a href="#">Zhigang Tu</a></h3>
+            <div class="affiliation">Wuhan University</div>
+          </div>
+
+          <div class="organizer-item">
+            <img class="speaker-photo" src="img/xiao.jpg" alt="Aoran Xiao">
+            <h3><a href="#">Aoran XiaoB</a></h3>
+            <div class="affiliation">RIKEN AIP</div>
+          </div>
+
+          <div class="organizer-item">
+            <img class="speaker-photo" src="img/yao angela.png" alt="Angela Yao">
+            <h3><a href="#">Angela Yao</a></h3>
+            <div class="affiliation">Institute C</div>
+          </div>
+
+          <div class="organizer-item">
+            <img class="speaker-photo" src="img/gall.png" alt="J¨urgen Gall">
+            <h3><a href="#">J¨urgen Gall</a></h3>
+            <div class="affiliation">Company D</div>
+          </div>
+
+          <div class="organizer-item">
+            <img class="speaker-photo" src="img/liujun.jpg" alt="Jun Liu">
+            <h3><a href="#">Jun Liu</a></h3>
+            <div class="affiliation">University E</div>
+          </div>
+
+          <div class="organizer-item">
+            <img class="speaker-photo" src="img/yuan.jpg" alt="Junsong Yuan">
+            <h3><a href="#">Junsong Yuan</a></h3>
+            <div class="affiliation">Institute F</div>
           </div>
           <div class="organizer-item">
-            <div class="avatar"></div>
-            <h3>Organizer B</h3>
-            <div class="small-text">University B</div>
-          </div>
-          <div class="organizer-item">
-            <div class="avatar"></div>
-            <h3>Organizer C</h3>
-            <div class="small-text">Institute C</div>
-          </div>
-          <div class="organizer-item">
-            <div class="avatar"></div>
-            <h3>Organizer D</h3>
-            <div class="small-text">Company D</div>
-          </div>
-          <div class="organizer-item">
-            <div class="avatar"></div>
-            <h3>Organizer E</h3>
-            <div class="small-text">University E</div>
-          </div>
-          <div class="organizer-item">
-            <div class="avatar"></div>
-            <h3>Organizer F</h3>
-            <div class="small-text">Institute F</div>
+            <img class="speaker-photo" src="img/r.jpg" alt="Hossein Rahmani">
+            <h3><a href="#">Hossein Rahmani</a></h3>
+            <div class="affiliation">Institute F</div>
           </div>
         </div>
       </section>
@@ -539,13 +710,14 @@
           </div>
         </div>
       </section>
+
     </div>
   </main>
 
   <footer>
     <div class="container footer-wrap">
       <div>© 2026 Your Workshop Name</div>
-      <div>Simple academic workshop webpage template</div>
+      <div>Academic workshop webpage template</div>
     </div>
   </footer>
 </body>

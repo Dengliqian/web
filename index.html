@@ -258,7 +258,7 @@
     }
 
     .banner-caption {
-      font-size: 13px;
+      font-size: 20px;
       color: #6b7280;
       padding: 10px 14px;
       border-top: 1px solid #e5e7eb;
@@ -267,95 +267,28 @@
     }
 
     /* ===== Important Dates ===== */
-    .important-dates-card,
-    .schedule-list,
-    .contact-list {
-      margin-top: 12px;
-      width: 100%;
-      max-width: 100%;
+    .important-dates-list {
+      list-style: square;
+      padding-left: 20px;
+      margin: 6px 0 0 0;
     }
 
-    .important-dates-card {
-      border: 1px solid #cfd6df;
-      border-radius: 12px;
-      overflow: hidden;
-      background: #fbfbfc;
-    }
-
-    .important-dates-title {
-      font-size: 24px;
-      font-weight: 500;
-      color: #1f2937;
-      padding: 20px 24px;
-      background: #f1f1f3;
-      border-bottom: 1px solid #cfd6df;
+    .important-dates-list li {
+      font-size: 10x;
+      font-weight: 600;
+      line-height: 1.8;
+      color: #202124;
+      margin-bottom: 24px;
       text-align: left;
     }
 
-    .dates-table {
-      width: 100%;
+    .important-dates-list li:last-child {
+      margin-bottom: 0;
     }
 
-    .date-group {
-      border-bottom: 1px solid #d7dde5;
-    }
-
-    .date-group:last-child {
-      border-bottom: none;
-    }
-
-    .date-group-label {
-      padding: 10px 12px;
-      font-size: 18px;
-      color: #374151;
-      border-bottom: 1px solid #d7dde5;
-      background: #fafafa;
-      text-align: left;
-    }
-
-    .date-row {
-      display: grid;
-      grid-template-columns: minmax(280px, 1.6fr) minmax(220px, 1.6fr) minmax(180px, 1fr);
-      column-gap: 18px;
-      align-items: center;
-      margin: 0 20px;
-      padding: 12px 10px;
-      border-bottom: 1px solid #d7dde5;
-    }
-
-    .date-group .date-row:last-child {
-      border-bottom: none;
-    }
-
-    .date-name {
-      font-size: 16px;
-      color: #374151;
-      text-align: left;
-    }
-
-    .date-name a {
-      color: #6b7280;
-      text-decoration: underline;
-      text-underline-offset: 2px;
-    }
-
-    .date-name.emphasis,
-    .date-name.emphasis a {
-      font-weight: 700;
-    }
-
-    .date-value {
-      font-size: 16px;
-      color: #374151;
-      text-align: left;
-    }
-
-    .date-countdown {
-      font-size: 15px;
-      color: #6b7280;
-      text-align: left;
-      white-space: nowrap;
-      font-variant-numeric: tabular-nums;
+    .date-highlight {
+      font-weight: 400;
+      color: #202124;
     }
 
     /* ===== Schedule / Contact ===== */
@@ -456,7 +389,6 @@
       grid-column: span 4;
     }
 
-
     .speaker-photo {
       width: 190px;
       height: 190px;
@@ -495,8 +427,6 @@
       margin-bottom: 6px;
     }
 
-    
-
     .speaker-item h3 a,
     .organizer-item h3 a {
       color: #111827;
@@ -507,8 +437,6 @@
     .organizer-item h3 a:hover {
       text-decoration: underline;
     }
-
-    
 
     /* ===== Footer ===== */
     footer {
@@ -530,48 +458,56 @@
     /* ===== 响应式 ===== */
     @media (max-width: 1180px) {
       .speakers-grid {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 30px;
-      margin-top: 26px;
-      align-items: stretch;
-    }
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 30px;
+        margin-top: 26px;
+        align-items: stretch;
+      }
 
       .organizers-grid {
-      display: grid;
-      grid-template-columns: repeat(12, minmax(0, 1fr));
-      gap: 36px 28px;
-      margin-top: 24px;
-      align-items: stretch;
-    }
+        display: grid;
+        grid-template-columns: repeat(12, minmax(0, 1fr));
+        gap: 36px 28px;
+        margin-top: 24px;
+        align-items: stretch;
+      }
 
       .speaker-photo {
         width: 178px;
         height: 178px;
       }
+
+      .important-dates-list li {
+        font-size: 23px;
+      }
     }
 
     @media (max-width: 900px) {
       .title-clean {
-      font-family: "Playfair Display", serif;
-      font-size: 50px;
-      line-height: 1.18;
-      font-weight: 700;
-      letter-spacing: -0.01em;
-      color: #ffffff;
-      margin-bottom: 20px;
-      text-shadow: 0 3px 18px rgba(0, 0, 0, 0.28);
-    }
+        font-family: "Playfair Display", serif;
+        font-size: 50px;
+        line-height: 1.18;
+        font-weight: 700;
+        letter-spacing: -0.01em;
+        color: #ffffff;
+        margin-bottom: 20px;
+        text-shadow: 0 3px 18px rgba(0, 0, 0, 0.28);
+      }
 
       .subtitle-clean {
-      font-family: "Inter", sans-serif;
-      font-size: 19px;
-      line-height: 1.65;
-      color: #e8eaed;
-      max-width: 860px;
-      margin: 0 auto 26px;
-      text-shadow: 0 2px 12px rgba(0, 0, 0, 0.24);
-    }
+        font-family: "Inter", sans-serif;
+        font-size: 19px;
+        line-height: 1.65;
+        color: #e8eaed;
+        max-width: 860px;
+        margin: 0 auto 26px;
+        text-shadow: 0 2px 12px rgba(0, 0, 0, 0.24);
+      }
+
+      .important-dates-list li {
+        font-size: 21px;
+      }
     }
 
     @media (max-width: 760px) {
@@ -588,93 +524,87 @@
       }
 
       .logo {
-      font-family: "Inter", sans-serif;
-      font-size: 16px;
-      font-weight: 700;
-      color: #ffffff;
-      letter-spacing: 0.02em;
-      text-align: left;
-      transition: color 0.3s ease;
-    }
+        font-family: "Inter", sans-serif;
+        font-size: 16px;
+        font-weight: 700;
+        color: #ffffff;
+        letter-spacing: 0.02em;
+        text-align: left;
+        transition: color 0.3s ease;
+      }
 
       .nav-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 18px;
-      font-family: "Inter", sans-serif;
-      font-size: 14px;
-      font-weight: 600;
-      text-align: left;
-    }
+        display: flex;
+        flex-wrap: wrap;
+        gap: 18px;
+        font-family: "Inter", sans-serif;
+        font-size: 14px;
+        font-weight: 600;
+        text-align: left;
+      }
 
       .title-clean {
-      font-family: "Playfair Display", serif;
-      font-size: 50px;
-      line-height: 1.18;
-      font-weight: 700;
-      letter-spacing: -0.01em;
-      color: #ffffff;
-      margin-bottom: 20px;
-      text-shadow: 0 3px 18px rgba(0, 0, 0, 0.28);
-    }
+        font-family: "Playfair Display", serif;
+        font-size: 50px;
+        line-height: 1.18;
+        font-weight: 700;
+        letter-spacing: -0.01em;
+        color: #ffffff;
+        margin-bottom: 20px;
+        text-shadow: 0 3px 18px rgba(0, 0, 0, 0.28);
+      }
 
       .subtitle-clean {
-      font-family: "Inter", sans-serif;
-      font-size: 19px;
-      line-height: 1.65;
-      color: #e8eaed;
-      max-width: 860px;
-      margin: 0 auto 26px;
-      text-shadow: 0 2px 12px rgba(0, 0, 0, 0.24);
-    }
+        font-family: "Inter", sans-serif;
+        font-size: 19px;
+        line-height: 1.65;
+        color: #e8eaed;
+        max-width: 860px;
+        margin: 0 auto 26px;
+        text-shadow: 0 2px 12px rgba(0, 0, 0, 0.24);
+      }
 
       .meta-clean {
-      font-family: "Inter", sans-serif;
-      font-size: 16px;
-      line-height: 1.7;
-      color: #f1f3f4;
-      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.24);
-    }
+        font-family: "Inter", sans-serif;
+        font-size: 16px;
+        line-height: 1.7;
+        color: #f1f3f4;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.24);
+      }
 
       h2 {
-      font-family: "Inter", sans-serif;
-      font-size: 28px;
-      line-height: 1.35;
-      font-weight: 600;
-      letter-spacing: -0.01em;
-      margin-bottom: 14px;
-      text-align: left;
-      color: #202124;
-    }
+        font-family: "Inter", sans-serif;
+        font-size: 28px;
+        line-height: 1.35;
+        font-weight: 600;
+        letter-spacing: -0.01em;
+        margin-bottom: 14px;
+        text-align: left;
+        color: #202124;
+      }
 
       .speakers-grid,
       .organizers-grid {
-      display: grid;
-      grid-template-columns: repeat(12, minmax(0, 1fr));
-      gap: 36px 28px;
-      margin-top: 24px;
-      align-items: stretch;
-    }
+        display: grid;
+        grid-template-columns: repeat(12, minmax(0, 1fr));
+        gap: 36px 28px;
+        margin-top: 24px;
+        align-items: stretch;
+      }
 
       .schedule-item {
         grid-template-columns: 1fr;
         gap: 4px;
       }
 
-      .date-row {
-        grid-template-columns: 1fr;
-        gap: 4px;
-        margin: 0 12px;
-        padding: 10px 8px;
+      .important-dates-list {
+        padding-left: 28px;
       }
 
-      .date-group-label {
-        font-size: 17px;
-      }
-
-      .important-dates-title {
-        font-size: 22px;
-        padding: 16px 18px;
+      .important-dates-list li {
+        font-size: 18px;
+        line-height: 1.75;
+        margin-bottom: 16px;
       }
 
       .banner img {
@@ -769,79 +699,19 @@
             over static accuracy.
           </p>
         </div>
-<!-- 
-        <div class="banner">
-          <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1600&q=80" alt="Workshop banner image" />
-          <div class="banner-caption">
-            Replace this image with a representative workshop figure, conference visual, or project banner.
-          </div>
-        </div> -->
 
-        <div class="important-dates-card" style="margin-top: 24px;">
-          <div class="important-dates-title">Dates and Deadlines</div>
-          <div class="dates-table">
-            <div class="date-group">
-              <div class="date-group-label">Paper Submissions</div>
-
-              <div class="date-row">
-                <div class="date-name"><a href="#submission">Paper registration deadline</a></div>
-                <div class="date-value">Feb 26 '26 10:00 PM UTC</div>
-                <div class="date-countdown" data-deadline="2026-02-26T22:00:00Z">Loading...</div>
-              </div>
-
-              <div class="date-row">
-                <div class="date-name"><a href="#submission">Main conference submission deadline</a></div>
-                <div class="date-value">Mar 05 '26 10:00 PM UTC</div>
-                <div class="date-countdown" data-deadline="2026-03-05T22:00:00Z">Loading...</div>
-              </div>
-
-              <div class="date-row">
-                <div class="date-name"><a href="#submission">Supplemental materials deadline</a></div>
-                <div class="date-value">Mar 12 '26 10:00 PM UTC</div>
-                <div class="date-countdown" data-deadline="2026-03-12T22:00:00Z">Loading...</div>
-              </div>
-
-              <div class="date-row">
-                <div class="date-name">Reviews released to authors</div>
-                <div class="date-value">May 02 '26</div>
-                <div class="date-countdown" data-deadline="2026-05-02T23:59:59Z">Loading...</div>
-              </div>
-
-              <div class="date-row">
-                <div class="date-name">Rebuttal deadline</div>
-                <div class="date-value">May 11 '26 09:00 PM UTC</div>
-                <div class="date-countdown" data-deadline="2026-05-11T21:00:00Z">Loading...</div>
-              </div>
-
-              <div class="date-row">
-                <div class="date-name">Final decisions</div>
-                <div class="date-value">Jun 17 '26</div>
-                <div class="date-countdown" data-deadline="2026-06-17T23:59:59Z">Loading...</div>
-              </div>
-
-              <div class="date-row">
-                <div class="date-name">Camera ready deadline</div>
-                <div class="date-value">Jun 26 '26 (Anywhere on Earth)</div>
-                <div class="date-countdown" data-deadline="2026-06-27T11:59:59Z">Loading...</div>
-              </div>
-            </div>
-
-            <div class="date-group">
-              <div class="date-group-label">Workshop</div>
-
-              <div class="date-row">
-                <div class="date-name emphasis">Workshop date</div>
-                <div class="date-value">July 12, 2026</div>
-                <div class="date-countdown" data-deadline="2026-07-12T23:59:59Z">Loading...</div>
-              </div>
-
-              <div class="date-row">
-                <div class="date-name">Notification to authors</div>
-                <div class="date-value">May 28, 2026</div>
-                <div class="date-countdown" data-deadline="2026-05-28T23:59:59Z">Loading...</div>
-              </div>
-            </div>
-          </div>
+        <h2>Important Dates</h2>
+        <div class="section-intro">
+          <ul class="important-dates-list">
+            <li>
+              Workshop Paper submission deadline:
+              <span class="date-highlight">...</span>
+            </li>
+            <li>
+              Notification to authors:
+              <span class="date-highlight">...</span>
+            </li>
+          </ul>
         </div>
       </section>
 
@@ -862,21 +732,19 @@
 
       <section id="speakers">
         <h2>Invited Speakers</h2>
-        <p class="section-text">Confirmed invited speakers for the workshop.</p>
+        
 
         <div class="speakers-grid">
           <div class="speaker-item">
             <img class="speaker-photo" src="speaker/dima.jpg" alt="Speaker 1">
             <h3><a href="https://dimadamen.github.io/">Dima Damen</a></h3>
             <div class="affiliation">University of Bristol</div>
-        
           </div>
 
           <div class="speaker-item">
             <img class="speaker-photo" src="speaker/liuzicheng.jpg" alt="Speaker 2">
             <h3><a href="https://sites.google.com/view/zichengliu/home?authuser=0">Zicheng Liu</a></h3>
             <div class="affiliation">Partner Research Manager, Microsoft.</div>
-   
           </div>
 
           <div class="speaker-item">
@@ -889,7 +757,6 @@
             <img class="speaker-photo" src="speaker/CSKIM_20190429.jpg" alt="Speaker 4">
             <h3><a href="https://mcl.korea.ac.kr/people/professor/">Kim Chang-Su</a></h3>
             <div class="affiliation">Professor, Korea University</div>
-       
           </div>
         </div>
       </section>
@@ -946,11 +813,13 @@
           We welcome original and previously unpublished work related to the workshop theme. Contributions may include methodological advances, benchmarks, datasets, applications, analyses of failure cases, and position papers that motivate new research directions.
         </p>
         <ul class="submission-list">
-          <li><strong>Submission site:</strong> OpenReview / CMT / placeholder link</li>
-          <li><strong>Paper format:</strong> 4 pages plus references</li>
+          <li>
+            <strong>Submission site:</strong>
+            <a href="https://openreview.net/" target="_blank">OpenReview</a>
+          </li>
+          <li><strong>Paper format:</strong>...</li>
           <li><strong>Review policy:</strong> double-blind or single-blind, depending on final policy</li>
           <li><strong>Presentation format:</strong> poster, spotlight, or oral</li>
-          <li><strong>Archival status:</strong> specify whether the workshop proceedings are archival or non-archival</li>
         </ul>
       </section>
 
@@ -1007,16 +876,16 @@
         <div class="contact-list">
           <div class="contact-item">
             <div class="contact-label">Email</div>
-            <div class="contact-value">yourworkshop@example.com</div>
+            <div class="contact-value">...</div>
           </div>
           <div class="contact-item">
             <div class="contact-label">Website</div>
             <div class="contact-value">
-  OpenReview: 
-  <a href="https://openreview.net/" target="_blank">
-    https://openreview.net/
-  </a>
-</div>
+              OpenReview:
+              <a href="https://openreview.net/" target="_blank">
+                https://openreview.net/
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -1027,7 +896,6 @@
   <footer>
     <div class="container footer-wrap">
       <div>HCMIW@ECCV2026</div>
-    
     </div>
   </footer>
 
@@ -1043,40 +911,9 @@
         }
       }
 
-      function formatCountdown(targetDate) {
-        const now = new Date();
-        const diff = targetDate - now;
-
-        if (isNaN(targetDate.getTime())) return "Invalid date";
-        if (diff <= 0) return "Closed";
-
-        const totalSeconds = Math.floor(diff / 1000);
-        const days = Math.floor(totalSeconds / (24 * 60 * 60));
-        const hours = Math.floor((totalSeconds % (24 * 60 * 60)) / (60 * 60));
-        const minutes = Math.floor((totalSeconds % (60 * 60)) / 60);
-        const seconds = totalSeconds % 60;
-
-        const pad = (n) => String(n).padStart(2, "0");
-        return `${days}d ${pad(hours)}h ${pad(minutes)}m ${pad(seconds)}s`;
-      }
-
-      function updateCountdowns() {
-        document.querySelectorAll(".date-countdown").forEach(function (el) {
-          const deadline = el.getAttribute("data-deadline");
-          if (!deadline) {
-            el.textContent = "—";
-            return;
-          }
-          const targetDate = new Date(deadline);
-          el.textContent = formatCountdown(targetDate);
-        });
-      }
-
       document.addEventListener("DOMContentLoaded", function () {
         handleNavScroll();
-        updateCountdowns();
         window.addEventListener("scroll", handleNavScroll);
-        setInterval(updateCountdowns, 1000);
       });
     })();
   </script>

@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Workshop 2026</title>
 
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
   <style>
     * {
       margin: 0;
@@ -17,13 +19,13 @@
     }
 
     body {
-      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-family: "Inter", sans-serif;
       font-size: 16px;
-      line-height: 1.7;
+      line-height: 1.75;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
       background: #ffffff;
-      color: #111827;
+      color: #2d2f31;
       text-align: justify;
       text-justify: inter-word;
     }
@@ -38,19 +40,28 @@
       display: block;
     }
 
-    /* ===== 全站统一版心 ===== */
     .container {
       width: min(1280px, calc(100% - 64px));
       margin: 0 auto;
     }
 
-    /* ===== 导航栏 ===== */
+    /* ===== 导航栏：透明 -> 滚动后白色 ===== */
     nav {
-      position: sticky;
+      position: fixed;
       top: 0;
+      left: 0;
+      width: 100%;
       z-index: 1000;
-      background: #ffffff;
+      background: transparent;
+      border-bottom: none;
+      transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    nav.scrolled {
+      background: rgba(255, 255, 255, 0.96);
       border-bottom: 1px solid #e5e7eb;
+      box-shadow: 0 2px 14px rgba(15, 23, 42, 0.08);
+      backdrop-filter: blur(8px);
     }
 
     .nav-inner {
@@ -59,105 +70,126 @@
       align-items: center;
       flex-wrap: wrap;
       gap: 16px;
-      padding: 15px 0;
+      padding: 16px 0;
+      transition: padding 0.3s ease;
     }
 
     .logo {
+      font-family: "Inter", sans-serif;
       font-size: 16px;
       font-weight: 700;
-      color: #111827;
-      letter-spacing: 0;
+      color: #ffffff;
+      letter-spacing: 0.02em;
       text-align: left;
+      transition: color 0.3s ease;
     }
 
     .nav-links {
       display: flex;
       flex-wrap: wrap;
       gap: 18px;
+      font-family: "Inter", sans-serif;
       font-size: 14px;
       font-weight: 600;
-      color: #374151;
       text-align: left;
     }
 
     .nav-links a {
-      transition: color 0.2s ease;
-    }
-
-    .nav-links a:hover {
-      color: #111827;
-    }
-
-    /* ===== Header ===== */
-    header {
       position: relative;
-      padding: 108px 0 86px;
+      color: #ffffff;
+      transition: color 0.3s ease, opacity 0.2s ease;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      width: 0;
+      height: 2px;
+      background: currentColor;
+      transition: width 0.25s ease;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    nav.scrolled .logo {
+      font-family: "Inter", sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      color: #111827;
+      letter-spacing: 0.02em;
+      text-align: left;
+      transition: color 0.3s ease;
+    }
+
+    nav.scrolled .nav-links a {
+      color: #374151;
+    }
+
+    /* ===== Header / Hero ===== */
+    .hero-clean {
+      position: relative;
+      padding: 180px 0 124px;
       background-image: url("./WMU landscape shot.jpg");
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      border-bottom: 1px solid #e5e7eb;
     }
 
-    .hero {
-      width: 100%;
-      max-width: 100%;
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.52);
     }
 
-    .eyebrow {
-      display: inline-block;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0.08em;
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 940px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .eyebrow-clean {
+      font-family: "Inter", sans-serif;
+      font-size: 56px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
-      color: #f3f4f6;
-      margin-bottom: 14px;
-      text-align: left;
-      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.32);
+      color: #d1d5db;
+      margin-bottom: 18px;
     }
 
-    h1 {
-      font-size: 42px;
-      line-height: 1.2;
+    .title-clean {
+      font-family: "Playfair Display", serif;
+      font-size: 50px;
+      line-height: 1.18;
       font-weight: 700;
+      letter-spacing: -0.01em;
       color: #ffffff;
-      margin-bottom: 12px;
-      text-align: left;
-      text-shadow: 0 3px 16px rgba(0, 0, 0, 0.35);
-      max-width: 980px;
+      margin-bottom: 20px;
+      text-shadow: 0 3px 18px rgba(0, 0, 0, 0.28);
     }
 
-    .subtitle {
-      font-size: 20px;
-      line-height: 1.5;
-      color: #f3f4f6;
-      margin-bottom: 18px;
-      font-weight: 400;
-      text-align: left;
-      max-width: 980px;
-      text-shadow: 0 2px 12px rgba(0, 0, 0, 0.30);
-    }
-
-    .meta {
-      font-size: 14px;
+    .subtitle-clean {
+      font-family: "Inter", sans-serif;
+      font-size: 19px;
       line-height: 1.65;
-      color: #e5e7eb;
-      margin-bottom: 18px;
-      text-align: left;
-      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.30);
+      color: #e8eaed;
+      max-width: 860px;
+      margin: 0 auto 26px;
+      text-shadow: 0 2px 12px rgba(0, 0, 0, 0.24);
     }
 
-    .meta div + div {
-      margin-top: 3px;
-    }
-
-    .hero p {
-      font-size: 15px;
-      line-height: 1.75;
-      color: #f9fafb;
-      text-align: left;
-      max-width: 980px;
-      text-shadow: 0 2px 12px rgba(0, 0, 0, 0.28);
+    .meta-clean {
+      font-family: "Inter", sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      color: #f1f3f4;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.24);
     }
 
     /* ===== Main ===== */
@@ -171,20 +203,23 @@
     }
 
     h2 {
+      font-family: "Inter", sans-serif;
       font-size: 28px;
-      line-height: 1.3;
-      font-weight: 700;
+      line-height: 1.35;
+      font-weight: 600;
+      letter-spacing: -0.01em;
       margin-bottom: 14px;
       text-align: left;
-      color: #111827;
+      color: #202124;
     }
 
     h3 {
+      font-family: "Inter", sans-serif;
       font-size: 18px;
-      line-height: 1.35;
-      font-weight: 700;
+      line-height: 1.4;
+      font-weight: 600;
       margin: 0 0 6px;
-      color: #111827;
+      color: #202124;
       text-align: left;
     }
 
@@ -192,7 +227,6 @@
     .section-text,
     .topics-list,
     .submission-list,
-    .dates-list,
     .schedule-list,
     .contact-list,
     .speakers-grid,
@@ -203,13 +237,14 @@
     }
 
     .section-text {
-      font-size: 15px;
-      line-height: 1.7;
-      color: #374151;
+      font-size: 16px;
+      line-height: 1.75;
+      color: #3c4043;
       margin-bottom: 14px;
+      font-family: "Inter", sans-serif;
     }
 
-    /* ===== 普通横幅图 ===== */
+    /* ===== 横幅图 ===== */
     .banner {
       margin: 26px 0 28px;
       border: 1px solid #e5e7eb;
@@ -231,22 +266,109 @@
       text-align: left;
     }
 
-    /* ===== Dates / Contact / Schedule ===== */
-    .dates-list,
+    /* ===== Important Dates ===== */
+    .important-dates-card,
     .schedule-list,
     .contact-list {
       margin-top: 12px;
-      border-top: 1px solid #e5e7eb;
+      width: 100%;
+      max-width: 100%;
     }
 
-    .date-item,
+    .important-dates-card {
+      border: 1px solid #cfd6df;
+      border-radius: 12px;
+      overflow: hidden;
+      background: #fbfbfc;
+    }
+
+    .important-dates-title {
+      font-size: 24px;
+      font-weight: 500;
+      color: #1f2937;
+      padding: 20px 24px;
+      background: #f1f1f3;
+      border-bottom: 1px solid #cfd6df;
+      text-align: left;
+    }
+
+    .dates-table {
+      width: 100%;
+    }
+
+    .date-group {
+      border-bottom: 1px solid #d7dde5;
+    }
+
+    .date-group:last-child {
+      border-bottom: none;
+    }
+
+    .date-group-label {
+      padding: 10px 12px;
+      font-size: 18px;
+      color: #374151;
+      border-bottom: 1px solid #d7dde5;
+      background: #fafafa;
+      text-align: left;
+    }
+
+    .date-row {
+      display: grid;
+      grid-template-columns: minmax(280px, 1.6fr) minmax(220px, 1.6fr) minmax(180px, 1fr);
+      column-gap: 18px;
+      align-items: center;
+      margin: 0 20px;
+      padding: 12px 10px;
+      border-bottom: 1px solid #d7dde5;
+    }
+
+    .date-group .date-row:last-child {
+      border-bottom: none;
+    }
+
+    .date-name {
+      font-size: 16px;
+      color: #374151;
+      text-align: left;
+    }
+
+    .date-name a {
+      color: #6b7280;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    .date-name.emphasis,
+    .date-name.emphasis a {
+      font-weight: 700;
+    }
+
+    .date-value {
+      font-size: 16px;
+      color: #374151;
+      text-align: left;
+    }
+
+    .date-countdown {
+      font-size: 15px;
+      color: #6b7280;
+      text-align: left;
+      white-space: nowrap;
+      font-variant-numeric: tabular-nums;
+    }
+
+    /* ===== Schedule / Contact ===== */
     .schedule-item,
     .contact-item {
       padding: 13px 0;
       border-bottom: 1px solid #e5e7eb;
     }
 
-    .date-item .label,
+    .contact-list {
+      border-top: 1px solid #e5e7eb;
+    }
+
     .contact-label {
       font-size: 13px;
       color: #6b7280;
@@ -254,7 +376,6 @@
       text-align: left;
     }
 
-    .date-item .value,
     .contact-value {
       font-size: 15px;
       color: #111827;
@@ -296,31 +417,45 @@
       grid-template-columns: repeat(4, minmax(0, 1fr));
       gap: 30px;
       margin-top: 26px;
-      align-items: start;
+      align-items: stretch;
     }
 
     /* ===== Organizers ===== */
     .organizers-grid {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: repeat(12, minmax(0, 1fr));
       gap: 36px 28px;
       margin-top: 24px;
-      align-items: start;
+      align-items: stretch;
     }
 
     .speaker-item,
     .organizer-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
       text-align: center;
       padding: 16px 10px;
       border-radius: 18px;
       transition: transform 0.28s ease;
       background: transparent;
+      height: 100%;
     }
 
     .speaker-item:hover,
     .organizer-item:hover {
       transform: translateY(-6px);
     }
+
+    .organizer-item.organizer-span-3 {
+      grid-column: span 3;
+    }
+
+    .organizer-item.organizer-span-4 {
+      grid-column: span 4;
+    }
+
 
     .speaker-photo {
       width: 190px;
@@ -352,9 +487,15 @@
 
     .speaker-item h3,
     .organizer-item h3 {
+      min-height: 2.8em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       font-size: 18px;
-      margin-bottom: 4px;
+      margin-bottom: 6px;
     }
+
+    
 
     .speaker-item h3 a,
     .organizer-item h3 a {
@@ -367,17 +508,7 @@
       text-decoration: underline;
     }
 
-    .affiliation {
-      color: #4b5563;
-      font-size: 14px;
-      margin-bottom: 3px;
-    }
-
-    .small-text {
-      color: #6b7280;
-      font-size: 13px;
-      line-height: 1.55;
-    }
+    
 
     /* ===== Footer ===== */
     footer {
@@ -399,17 +530,48 @@
     /* ===== 响应式 ===== */
     @media (max-width: 1180px) {
       .speakers-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 30px;
+      margin-top: 26px;
+      align-items: stretch;
+    }
 
       .organizers-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
+      display: grid;
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+      gap: 36px 28px;
+      margin-top: 24px;
+      align-items: stretch;
+    }
 
       .speaker-photo {
         width: 178px;
         height: 178px;
       }
+    }
+
+    @media (max-width: 900px) {
+      .title-clean {
+      font-family: "Playfair Display", serif;
+      font-size: 50px;
+      line-height: 1.18;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      color: #ffffff;
+      margin-bottom: 20px;
+      text-shadow: 0 3px 18px rgba(0, 0, 0, 0.28);
+    }
+
+      .subtitle-clean {
+      font-family: "Inter", sans-serif;
+      font-size: 19px;
+      line-height: 1.65;
+      color: #e8eaed;
+      max-width: 860px;
+      margin: 0 auto 26px;
+      text-shadow: 0 2px 12px rgba(0, 0, 0, 0.24);
+    }
     }
 
     @media (max-width: 760px) {
@@ -425,26 +587,94 @@
         align-items: flex-start;
       }
 
-      h1 {
-        font-size: 34px;
-      }
+      .logo {
+      font-family: "Inter", sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      color: #ffffff;
+      letter-spacing: 0.02em;
+      text-align: left;
+      transition: color 0.3s ease;
+    }
 
-      .subtitle {
-        font-size: 18px;
-      }
+      .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      font-family: "Inter", sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      text-align: left;
+    }
+
+      .title-clean {
+      font-family: "Playfair Display", serif;
+      font-size: 50px;
+      line-height: 1.18;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      color: #ffffff;
+      margin-bottom: 20px;
+      text-shadow: 0 3px 18px rgba(0, 0, 0, 0.28);
+    }
+
+      .subtitle-clean {
+      font-family: "Inter", sans-serif;
+      font-size: 19px;
+      line-height: 1.65;
+      color: #e8eaed;
+      max-width: 860px;
+      margin: 0 auto 26px;
+      text-shadow: 0 2px 12px rgba(0, 0, 0, 0.24);
+    }
+
+      .meta-clean {
+      font-family: "Inter", sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      color: #f1f3f4;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.24);
+    }
 
       h2 {
-        font-size: 24px;
-      }
+      font-family: "Inter", sans-serif;
+      font-size: 28px;
+      line-height: 1.35;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      margin-bottom: 14px;
+      text-align: left;
+      color: #202124;
+    }
 
       .speakers-grid,
       .organizers-grid {
-        grid-template-columns: 1fr;
-      }
+      display: grid;
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+      gap: 36px 28px;
+      margin-top: 24px;
+      align-items: stretch;
+    }
 
       .schedule-item {
         grid-template-columns: 1fr;
         gap: 4px;
+      }
+
+      .date-row {
+        grid-template-columns: 1fr;
+        gap: 4px;
+        margin: 0 12px;
+        padding: 10px 8px;
+      }
+
+      .date-group-label {
+        font-size: 17px;
+      }
+
+      .important-dates-title {
+        font-size: 22px;
+        padding: 16px 18px;
       }
 
       .banner img {
@@ -456,16 +686,16 @@
         height: 156px;
       }
 
-      header {
-        padding: 76px 0 60px;
+      .hero-clean {
+        padding: 150px 0 88px;
       }
     }
   </style>
 </head>
 <body>
-  <nav>
+  <nav id="mainNav">
     <div class="container nav-inner">
-      <div class="logo">Workshop 2026</div>
+      <div class="logo">HCMIW@ECCV2026</div>
       <div class="nav-links">
         <a href="#overview">Overview</a>
         <a href="#topics">Topics</a>
@@ -478,22 +708,21 @@
     </div>
   </nav>
 
-  <header>
-    <div class="container">
-      <div class="hero">
-        <div class="eyebrow">CVPR 2026 Workshop</div>
-        <h1>The 1st Workshop on Human-Centered Multimodal Intelligence in the Wild</h1>
-        <div class="subtitle">
-          A workshop on foundation models and beyond for human-centered multimodal perception, reasoning, and real-world deployment
-        </div>
-        <div class="meta">
-          <div><strong>Date:</strong> July 12, 2026</div>
-          <div><strong>Location:</strong> Placeholder Conference Venue</div>
-          <div><strong>Co-located with:</strong> Placeholder Conference</div>
-        </div>
-        <p>
-          The Human-Centered Multimodal Intelligence in the Wild (HCMIW) workshop bridges the gap between theoretical multimodal foundation models and practical, human-aligned applications. We focus on the synergy between robust perception and sophisticated reasoning, aiming to redefine how vision systems interpret human presence across heterogeneous sensors and dynamic real-world contexts.
-        </p>
+  <header class="hero-clean">
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+      <div class="eyebrow-clean">ECCV 2026 Workshop</div>
+      <h1 class="title-clean">
+        The 1st Workshop on<br>
+        Human-Centered Multimodal Intelligence in the Wild
+      </h1>
+      <div class="subtitle-clean">
+        Foundation models and beyond for human-centered multimodal perception,
+        reasoning, and real-world deployment
+      </div>
+      <div class="meta-clean">
+        <div><strong>Date:</strong> ......2026</div>
+        <div><strong>Location:</strong> Malmö, Sweden</div>
       </div>
     </div>
   </header>
@@ -505,37 +734,113 @@
         <h2>Overview</h2>
         <div class="section-intro">
           <p class="section-text">
-            The emergence of multimodal foundation models has catalyzed a paradigm shift in human-centered vision. While traditional systems often struggle with the open-world complexity of human behavior, the integration of large-scale pre-training with cross-modal reasoning offers new paths toward adaptive intelligence.
-          </p>
-          <p class="section-text">
-            This workshop focuses on the transition from constrained benchmarks to in-the-wild deployment, where perception systems must deal with ambiguous human intent, adverse imaging conditions, heterogeneous sensors, and dynamic environments. We aim to bridge theory and practice by bringing together work on robust perception, grounded reasoning, and real-world human-centered applications.
+            The emergence of multimodal foundation models (MLLMs) has catalyzed a
+            paradigm shift in human-centered vision. While traditional systems often struggle
+            with the “open-world” complexity of human behavior, the integration of
+            large-scale pre-training with cross-modal reasoning offers paths toward truly
+            adaptive intelligence. This workshop addresses the critical transition from constrained
+            benchmarks to “in-the-wild” deployment, where visual intelligence must
+            navigate the ambiguity of human intent and the noise of unstructured environments.
+            The Human-Centered Multimodal Intelligence in the Wild (HCMIW)
+            workshop bridges the gap between theoretical MLLMs and practical, human-aligned
+            applications. We focus on the synergy between robust perception and
+            sophisticated reasoning, aiming to redefine how vision systems interpret human
+            presence across heterogeneous sensors and dynamic contexts. To address these
+            challenges, HCMIW invites contributions across five critical axes:
+            <br><br>
+            – MLLMs for Human-Centric Tasks: Novel paradigms for detection, tracking,
+            and activity understanding. We emphasize efficient adaptation and “from-scratch”
+            training tailored for real-world constraints.
+            <br>
+            – Perception in Adverse Conditions: Advancing robustness against “in-the-wild”
+            variables, including extreme lighting, rapid motion, severe occlusions,
+            and complex human-object interactions.
+            <br>
+            – Heterogeneous Sensor Fusion: Beyond RGB—leveraging Infrared, Event-based
+            cameras, LiDAR, and Thermal sensing to build a multi-spectral understanding
+            of human activity.
+            <br>
+            – Generalization & Domain Transfer: Strategies for bridging the gap between
+            massive general-purpose datasets and specialized, high-stakes human-centric
+            domains.
+            <br>
+            – Next-Generation Benchmarking: Developing “wild-first” datasets and
+            evaluation metrics that prioritize human-facing performance, safety, and reliability
+            over static accuracy.
           </p>
         </div>
-
+<!-- 
         <div class="banner">
           <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1600&q=80" alt="Workshop banner image" />
           <div class="banner-caption">
             Replace this image with a representative workshop figure, conference visual, or project banner.
           </div>
-        </div>
+        </div> -->
 
-        <h3 style="margin-top: 24px;">Important Dates</h3>
-        <div class="dates-list">
-          <div class="date-item">
-            <div class="label">Paper Submission Deadline</div>
-            <div class="value">May 10, 2026</div>
-          </div>
-          <div class="date-item">
-            <div class="label">Notification to Authors</div>
-            <div class="value">May 28, 2026</div>
-          </div>
-          <div class="date-item">
-            <div class="label">Camera-ready Deadline</div>
-            <div class="value">June 5, 2026</div>
-          </div>
-          <div class="date-item">
-            <div class="label">Workshop Date</div>
-            <div class="value">July 12, 2026</div>
+        <div class="important-dates-card" style="margin-top: 24px;">
+          <div class="important-dates-title">Dates and Deadlines</div>
+          <div class="dates-table">
+            <div class="date-group">
+              <div class="date-group-label">Paper Submissions</div>
+
+              <div class="date-row">
+                <div class="date-name"><a href="#submission">Paper registration deadline</a></div>
+                <div class="date-value">Feb 26 '26 10:00 PM UTC</div>
+                <div class="date-countdown" data-deadline="2026-02-26T22:00:00Z">Loading...</div>
+              </div>
+
+              <div class="date-row">
+                <div class="date-name"><a href="#submission">Main conference submission deadline</a></div>
+                <div class="date-value">Mar 05 '26 10:00 PM UTC</div>
+                <div class="date-countdown" data-deadline="2026-03-05T22:00:00Z">Loading...</div>
+              </div>
+
+              <div class="date-row">
+                <div class="date-name"><a href="#submission">Supplemental materials deadline</a></div>
+                <div class="date-value">Mar 12 '26 10:00 PM UTC</div>
+                <div class="date-countdown" data-deadline="2026-03-12T22:00:00Z">Loading...</div>
+              </div>
+
+              <div class="date-row">
+                <div class="date-name">Reviews released to authors</div>
+                <div class="date-value">May 02 '26</div>
+                <div class="date-countdown" data-deadline="2026-05-02T23:59:59Z">Loading...</div>
+              </div>
+
+              <div class="date-row">
+                <div class="date-name">Rebuttal deadline</div>
+                <div class="date-value">May 11 '26 09:00 PM UTC</div>
+                <div class="date-countdown" data-deadline="2026-05-11T21:00:00Z">Loading...</div>
+              </div>
+
+              <div class="date-row">
+                <div class="date-name">Final decisions</div>
+                <div class="date-value">Jun 17 '26</div>
+                <div class="date-countdown" data-deadline="2026-06-17T23:59:59Z">Loading...</div>
+              </div>
+
+              <div class="date-row">
+                <div class="date-name">Camera ready deadline</div>
+                <div class="date-value">Jun 26 '26 (Anywhere on Earth)</div>
+                <div class="date-countdown" data-deadline="2026-06-27T11:59:59Z">Loading...</div>
+              </div>
+            </div>
+
+            <div class="date-group">
+              <div class="date-group-label">Workshop</div>
+
+              <div class="date-row">
+                <div class="date-name emphasis">Workshop date</div>
+                <div class="date-value">July 12, 2026</div>
+                <div class="date-countdown" data-deadline="2026-07-12T23:59:59Z">Loading...</div>
+              </div>
+
+              <div class="date-row">
+                <div class="date-name">Notification to authors</div>
+                <div class="date-value">May 28, 2026</div>
+                <div class="date-countdown" data-deadline="2026-05-28T23:59:59Z">Loading...</div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -562,30 +867,29 @@
         <div class="speakers-grid">
           <div class="speaker-item">
             <img class="speaker-photo" src="speaker/dima.jpg" alt="Speaker 1">
-            <h3><a href="#">Speaker Name 1</a></h3>
-            <div class="affiliation">University / Company</div>
-            <div class="small-text">Short talk title or research focus</div>
+            <h3><a href="https://dimadamen.github.io/">Dima Damen</a></h3>
+            <div class="affiliation">University of Bristol</div>
+        
           </div>
 
           <div class="speaker-item">
             <img class="speaker-photo" src="speaker/liuzicheng.jpg" alt="Speaker 2">
-            <h3><a href="#">Speaker Name 2</a></h3>
-            <div class="affiliation">University / Company</div>
-            <div class="small-text">Short talk title or research focus</div>
+            <h3><a href="https://sites.google.com/view/zichengliu/home?authuser=0">Zicheng Liu</a></h3>
+            <div class="affiliation">Partner Research Manager, Microsoft.</div>
+   
           </div>
 
           <div class="speaker-item">
             <img class="speaker-photo" src="speaker/poppe.jpg" alt="Speaker 3">
-            <h3><a href="#">Speaker Name 3</a></h3>
-            <div class="affiliation">University / Company</div>
-            <div class="small-text">Short talk title or research focus</div>
+            <h3><a href="https://www.uu.nl/staff/RWPoppe">Ronald Poppe</a></h3>
+            <div class="affiliation">Associate Professor, Utrecht University.</div>
           </div>
 
           <div class="speaker-item">
             <img class="speaker-photo" src="speaker/CSKIM_20190429.jpg" alt="Speaker 4">
-            <h3><a href="#">Speaker Name 4</a></h3>
-            <div class="affiliation">University / Company</div>
-            <div class="small-text">Short talk title or research focus</div>
+            <h3><a href="https://mcl.korea.ac.kr/people/professor/">Kim Chang-Su</a></h3>
+            <div class="affiliation">Professor, Korea University</div>
+       
           </div>
         </div>
       </section>
@@ -654,45 +958,46 @@
         <h2>Organizers</h2>
 
         <div class="organizers-grid">
-          <div class="organizer-item">
+          <div class="organizer-item organizer-span-3">
             <img class="speaker-photo" src="img/tu.jpg" alt="Zhigang Tu">
-            <h3><a href="#">Zhigang Tu</a></h3>
+            <h3><a href="http://tuzhigang.cn/English.html">Zhigang Tu</a></h3>
             <div class="affiliation">Wuhan University</div>
           </div>
 
-          <div class="organizer-item">
+          <div class="organizer-item organizer-span-3">
             <img class="speaker-photo" src="img/xiao.jpg" alt="Aoran Xiao">
-            <h3><a href="#">Aoran XiaoB</a></h3>
-            <div class="affiliation">RIKEN AIP</div>
+            <h3><a href="https://xiaoaoran.github.io/">Aoran Xiao</a></h3>
+            <div class="affiliation">Harbin Institute Of Technology</div>
           </div>
 
-          <div class="organizer-item">
+          <div class="organizer-item organizer-span-3">
             <img class="speaker-photo" src="img/yao angela.png" alt="Angela Yao">
-            <h3><a href="#">Angela Yao</a></h3>
-            <div class="affiliation">Institute C</div>
+            <h3><a href="https://www.comp.nus.edu.sg/~ayao/">Angela Yao</a></h3>
+            <div class="affiliation">National University of Singapore</div>
           </div>
 
-          <div class="organizer-item">
-            <img class="speaker-photo" src="img/gall.png" alt="J¨urgen Gall">
-            <h3><a href="#">J¨urgen Gall</a></h3>
-            <div class="affiliation">Company D</div>
+          <div class="organizer-item organizer-span-3">
+            <img class="speaker-photo" src="img/gall.png" alt="Jürgen Gall">
+            <h3><a href="https://pages.iai.uni-bonn.de/gall_juergen/">Jürgen Gall</a></h3>
+            <div class="affiliation">University of Bonn</div>
           </div>
 
-          <div class="organizer-item">
+          <div class="organizer-item organizer-span-4">
             <img class="speaker-photo" src="img/liujun.jpg" alt="Jun Liu">
-            <h3><a href="#">Jun Liu</a></h3>
-            <div class="affiliation">University E</div>
+            <h3><a href="https://www.lancaster.ac.uk/scc/about-us/people/jun-liu2">Jun Liu</a></h3>
+            <div class="affiliation">Lancaster University</div>
           </div>
 
-          <div class="organizer-item">
+          <div class="organizer-item organizer-span-4">
             <img class="speaker-photo" src="img/yuan.jpg" alt="Junsong Yuan">
-            <h3><a href="#">Junsong Yuan</a></h3>
-            <div class="affiliation">Institute F</div>
+            <h3><a href="https://cse.buffalo.edu/~jsyuan/">Junsong Yuan</a></h3>
+            <div class="affiliation">University at Buffalo</div>
           </div>
-          <div class="organizer-item">
+
+          <div class="organizer-item organizer-span-4">
             <img class="speaker-photo" src="img/r.jpg" alt="Hossein Rahmani">
-            <h3><a href="#">Hossein Rahmani</a></h3>
-            <div class="affiliation">Institute F</div>
+            <h3><a href="https://www.lancaster.ac.uk/scc/about-us/people/hossein-rahmani">Hossein Rahmani</a></h3>
+            <div class="affiliation">University at Buffalo</div>
           </div>
         </div>
       </section>
@@ -706,7 +1011,12 @@
           </div>
           <div class="contact-item">
             <div class="contact-label">Website</div>
-            <div class="contact-value">Add links to OpenReview, conference page, or social media here</div>
+            <div class="contact-value">
+  OpenReview: 
+  <a href="https://openreview.net/" target="_blank">
+    https://openreview.net/
+  </a>
+</div>
           </div>
         </div>
       </section>
@@ -716,9 +1026,59 @@
 
   <footer>
     <div class="container footer-wrap">
-      <div>© 2026 Your Workshop Name</div>
-      <div>Academic workshop webpage template</div>
+      <div>HCMIW@ECCV2026</div>
+    
     </div>
   </footer>
+
+  <script>
+    (function () {
+      const nav = document.getElementById("mainNav");
+
+      function handleNavScroll() {
+        if (window.scrollY > 50) {
+          nav.classList.add("scrolled");
+        } else {
+          nav.classList.remove("scrolled");
+        }
+      }
+
+      function formatCountdown(targetDate) {
+        const now = new Date();
+        const diff = targetDate - now;
+
+        if (isNaN(targetDate.getTime())) return "Invalid date";
+        if (diff <= 0) return "Closed";
+
+        const totalSeconds = Math.floor(diff / 1000);
+        const days = Math.floor(totalSeconds / (24 * 60 * 60));
+        const hours = Math.floor((totalSeconds % (24 * 60 * 60)) / (60 * 60));
+        const minutes = Math.floor((totalSeconds % (60 * 60)) / 60);
+        const seconds = totalSeconds % 60;
+
+        const pad = (n) => String(n).padStart(2, "0");
+        return `${days}d ${pad(hours)}h ${pad(minutes)}m ${pad(seconds)}s`;
+      }
+
+      function updateCountdowns() {
+        document.querySelectorAll(".date-countdown").forEach(function (el) {
+          const deadline = el.getAttribute("data-deadline");
+          if (!deadline) {
+            el.textContent = "—";
+            return;
+          }
+          const targetDate = new Date(deadline);
+          el.textContent = formatCountdown(targetDate);
+        });
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        handleNavScroll();
+        updateCountdowns();
+        window.addEventListener("scroll", handleNavScroll);
+        setInterval(updateCountdowns, 1000);
+      });
+    })();
+  </script>
 </body>
 </html>
